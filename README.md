@@ -1,6 +1,9 @@
 ## THP W9D4 - GibbZmail, an humble clone of Gmail based on Rails & Ajax
 
 ### :one: Context
+Just to make sure you're prepared to handle what's next, 1 or 2 important topics, I'd like to cover:
+- What will be used in this project: [About Ajax](https://www.dailymotion.com/video/x6l0ipy)
+- What can also be done with it (or any challenger brand): [About Solcarlus](https://www.dailymotion.com/video/x173o5v)
 
 ### :two: Content :scroll:
 #### Introduction
