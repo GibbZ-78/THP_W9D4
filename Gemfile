@@ -64,6 +64,13 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ##################################
 # Faker - Populate app with tangible (yet fake) data
 gem "faker", :git => "https://github.com/faker-ruby/faker.git", :branch => "master"
+# Database Cleaner - Allow 
+gem 'database_cleaner'
+
+# Bootstrap - Add gems to use Boostrap v.5
+gem 'bootstrap'
+gem 'jquery-rails'
+
 # Devise - Setup user (and other) a secured sign-up, log in, log out framework
 gem "devise"
 # Stripe - Adding some payment features to our mailer... What for ??? Just to say... we know how to do ! And train for the final project, Dude.
