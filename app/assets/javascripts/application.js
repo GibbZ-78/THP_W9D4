@@ -17,11 +17,3 @@
 //= require popper
 //= require bootstrap-sprockets
 
-
-function display_mail(mail_id) {
-  document.getElementById("email_window").innerHTML = "<h1>Mail n°" + mail_id + "</h1>";
-}
-
-function suppr_mail(my_mail_id) {
-  alert('Suppression du mail n°' + my_mail_id);
-}

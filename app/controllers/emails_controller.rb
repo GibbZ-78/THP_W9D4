@@ -6,6 +6,10 @@ class EmailsController < ApplicationController
 
   def show
     @email = Email.find(params[:id])
+    respond_to do |format|
+      format.js { }
+      format.html{ redirect_to root_path }
+    end
   end
 
   def create
@@ -26,7 +30,7 @@ class EmailsController < ApplicationController
 
   def destroy
     @email = Email.find(params[:id])
-    puts "  > E-mail n°"+@email.id+"va être effacé"
+    puts "  > Un e-mail va être effacé"
     @email.destroy
     respond_to do |format|
       format.js { }
