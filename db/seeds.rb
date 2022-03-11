@@ -14,8 +14,8 @@ puts
 puts "SEEDING - Création de quelques fake mails"
 puts
 
-10.times do |x|
-  Email.create(object: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 0).chop, body: Faker::Lorem.paragraphs(number:3))
+5.times do |x|
+  Email.create(object: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 0).chop, body: Faker::Lorem.paragraph_by_chars(number: 200, supplemental: false))
   puts "-"*25
   puts "Email n°: #{Email.all.last.id} - Object: #{Email.all.last.object} - Body: #{Email.all.last.body}"
   puts "-"*25

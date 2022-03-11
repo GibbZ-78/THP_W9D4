@@ -9,10 +9,10 @@ class EmailsController < ApplicationController
   end
 
   def create
-    @email = Email.create(object: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 0).chop, body: Faker::Lorem.paragraph)
+    @email = Email.create(object: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 0).chop+"[created]", body: Faker::Lorem.paragraph_by_chars(number: 256, supplemental: false))
     respond_to do |format|
       format.js { }
-      format.html{ render root_path }
+      format.html{ redirect_to root_path }
     end
   end
 
@@ -24,10 +24,14 @@ class EmailsController < ApplicationController
     #useless
   end
 
-  def delete
+  def destroy
     @email = Email.find(params[:id])
+    puts "  > E-mail n°"+@email.id+"va être effacé"
     @email.destroy
-    redirect_to root_path
+    respond_to do |format|
+      format.js { }
+      format.html{ redirect_to root_path }
+    end
   end
 
 end

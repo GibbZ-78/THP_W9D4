@@ -1,1 +1,1 @@
-document.getElementbyClassName("list-group").insertAdjacentHTML("afterbegin", <%= j render('email.html', var_mail: @email) %>);
+document.getElementsByClassName("list-group")[0].insertAdjacentHTML("afterbegin", "<%= j render 'email', var_mail: @email %>");
