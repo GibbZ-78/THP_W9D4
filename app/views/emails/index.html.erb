@@ -1,6 +1,6 @@
 <section class="row justify-content-center">
   <div class="col-4">
-    <%= link_to("Create E-mail",root_path, method: :post, class: "btn btn-primary my-3") %>
+    <%= link_to("Create E-mail",emails_path, method: :post, class: "btn btn-primary my-3", remote: true) %>
   </div>
   <div class="col-6">
   </div>
@@ -8,25 +8,8 @@
 <section class="row justify-content-center">
   <div class="col-4">
     <div class="list-group">
-    <%= @emails.each do |my_mail| %>
-      <a href="#" onclick="javascript:display_mail('<%= my_mail.id %>')" class="list-group-item list-group-item-action" aria-current="true">
-        <div class="d-flex w-100 justify-content-between">
-          <%= image_tag("#{rand(1..5)}", class: "rounded me-2", alt: "Mon image", size: "25x25") %>
-          <h5 class="mb-1"><%= my_mail.object %></h5>
-          <button onclick="javascript:suppr_mail('<%= my_mail.id %>')" type="button" class="btn-close" id="del_email" aria-label="Close"></button>
-        </div>
-        <p class="mb-1"><%= my_mail.body %></p>
-        <%
-          time_diff = Time.now - my_mail.created_at
-          time_diff_hrs = time_diff / 3600
-          time_diff_mns = (time_diff%3600)/60
-          time_diff_ss = (time_diff%3600)%60
-        %>
-        <div class="d-flex w-100 justify-content-between">
-        <small class="fst-italic">Message réf. <%= my_mail.id %></small>
-        <small class="fst-italic"> Reçu il y a <%= "#{time_diff_hrs.to_i}h #{time_diff_mns.to_i}' #{time_diff_ss.to_i}''" %></small>
-        </div>
-      </a>
+    <% @emails.each do |my_mail| %>
+      <%= render('email.html', var_mail: my_mail) %>
     <% end %>
     </div>
   </div>

@@ -10,6 +10,10 @@ class EmailsController < ApplicationController
 
   def create
     @email = Email.create(object: Faker::Lorem.sentence(word_count: 3, supplemental: false, random_words_to_add: 0).chop, body: Faker::Lorem.paragraph)
+    respond_to do |format|
+      format.js { }
+      format.html{ render root_path }
+    end
   end
 
   def new
