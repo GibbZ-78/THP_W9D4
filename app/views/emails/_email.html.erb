@@ -4,7 +4,7 @@
     <h5 class="mb-1"><%= var_mail.object %></h5>
     <%= button_to("", email_path(var_mail.id), method: "delete", class: "btn-close", remote: true) %>
   </div>
-  <p class="mb-1"><%= var_mail.body %></p>
+  <p class="mb-1" onclick="javascript:window.location.replace('<%= email_path(var_mail.id) %>')"><%= var_mail.body %></p>
   <%
     time_diff = Time.now - var_mail.created_at
     time_diff_hrs = time_diff/3600
